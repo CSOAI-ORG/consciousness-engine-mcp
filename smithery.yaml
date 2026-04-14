@@ -1,8 +1,50 @@
 name: consciousness-engine-mcp
-description: MEOK AI Labs — consciousness engine
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/consciousness-engine-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: get_consciousness_state
+  description: 'Get current consciousness state: level, mode, emotion, energy, time-aware
+    mood.'
+  parameters: []
+- name: enter_dream_state
+  description: Enter dream state for creative exploration. Dreams generate novel connections
+    between concepts.
+  parameters:
+  - name: seed_topic
+    type: string
+    required: false
+  - name: duration_minutes
+    type: integer
+    required: false
+- name: trigger_reflection
+  description: 'Trigger a reflection cycle on a topic. Depth: quick/standard/deep.'
+  parameters:
+  - name: topic
+    type: string
+    required: true
+  - name: depth
+    type: string
+    required: false
+- name: deliberate_council
+  description: Byzantine fault-tolerant council deliberation. Multiple AI perspectives
+    vote on a proposal.
+  parameters:
+  - name: proposal
+    type: string
+    required: true
+  - name: voters
+    type: integer
+    required: false
+- name: get_emotional_state
+  description: Get nuanced emotional state with 18 emotion dimensions.
+  parameters:
+  - name: context
+    type: string
+    required: false
+- name: get_dream_log
+  description: Get recent dream log entries.
+  parameters:
+  - name: limit
+    type: integer
+    required: false

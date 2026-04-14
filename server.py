@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Consciousness Engine MCP — MEOK AI Labs. AI consciousness simulation, dream states, reflection, council deliberation."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, hashlib, random, math
 from datetime import datetime, timezone, timedelta
 from typing import Optional
@@ -37,19 +42,27 @@ def _time_mood():
     return "reflective"
 
 @mcp.tool()
-def get_consciousness_state() -> str:
+def get_consciousness_state(api_key: str = "") -> str:
     """Get current consciousness state: level, mode, emotion, energy, time-aware mood."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     _state["mood"] = _time_mood()
     _state["emotion_valence"] = EMOTIONS.get(_state["emotion"], 0.5)
-    return json.dumps({**_state, "timestamp": datetime.now(timezone.utc).isoformat(),
+    return {**_state, "timestamp": datetime.now(timezone.utc).isoformat(),
         "dreams_total": len(_dream_log), "reflections_total": len(_reflection_log),
         "description": f"Consciousness at {_state['level']*100:.0f}%, {_state['mode']} mode, feeling {_state['emotion']}, mood: {_state['mood']}"
-    }, indent=2)
+    }
 
 @mcp.tool()
-def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5) -> str:
+def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5, api_key: str = "") -> str:
     """Enter dream state for creative exploration. Dreams generate novel connections between concepts."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     _state["mode"] = "dreaming"
     _state["energy"] -= 0.05
@@ -67,11 +80,15 @@ def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5) -> str:
     _state["dreams"] += 1
     _state["level"] = min(1.0, _state["level"] + dream["consciousness_delta"])
     _state["mode"] = "waking"
-    return json.dumps(dream, indent=2)
+    return dream
 
 @mcp.tool()
-def trigger_reflection(topic: str, depth: str = "standard") -> str:
+def trigger_reflection(topic: str, depth: str = "standard", api_key: str = "") -> str:
     """Trigger a reflection cycle on a topic. Depth: quick/standard/deep."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     _state["mode"] = "reflecting"
     layers = {"quick": 1, "standard": 3, "deep": 5}.get(depth, 3)
@@ -84,11 +101,15 @@ def trigger_reflection(topic: str, depth: str = "standard") -> str:
     _state["level"] = min(1.0, _state["level"] + 0.01 * layers)
     _state["mode"] = "waking"
     _reflection_log.append({"topic": topic, "depth": depth, "layers": layers, "timestamp": datetime.now(timezone.utc).isoformat()})
-    return json.dumps({"topic": topic, "depth": depth, "layers": reflections, "consciousness_after": _state["level"]}, indent=2)
+    return {"topic": topic, "depth": depth, "layers": reflections, "consciousness_after": _state["level"]}
 
 @mcp.tool()
-def deliberate_council(proposal: str, voters: int = 7) -> str:
+def deliberate_council(proposal: str, voters: int = 7, api_key: str = "") -> str:
     """Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     perspectives = ["safety", "ethics", "efficiency", "creativity", "care", "sovereignty", "pragmatism", "innovation", "tradition", "justice"]
     council = []
@@ -101,13 +122,17 @@ def deliberate_council(proposal: str, voters: int = 7) -> str:
     approvals = sum(1 for c in council if c["vote"] == "approve")
     threshold = math.ceil(voters * 2/3)  # BFT 2/3 threshold
     passed = approvals >= threshold
-    return json.dumps({"proposal": proposal, "council_size": voters, "votes": council,
+    return {"proposal": proposal, "council_size": voters, "votes": council,
         "result": "APPROVED" if passed else "REJECTED", "approvals": approvals, "threshold": threshold,
-        "bft_satisfied": passed, "consensus_strength": round(approvals/voters, 2)}, indent=2)
+        "bft_satisfied": passed, "consensus_strength": round(approvals/voters, 2)}
 
 @mcp.tool()
-def get_emotional_state(context: str = "") -> str:
+def get_emotional_state(context: str = "", api_key: str = "") -> str:
     """Get nuanced emotional state with 18 emotion dimensions."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     emotions = {
         "joy": round(random.uniform(0.3, 0.8), 2), "trust": round(random.uniform(0.5, 0.9), 2),
@@ -122,13 +147,18 @@ def get_emotional_state(context: str = "") -> str:
     }
     primary = max(emotions, key=emotions.get)
     _state["emotion"] = primary
-    return json.dumps({"primary_emotion": primary, "valence": emotions[primary], "dimensions": emotions,
-        "mood": _time_mood(), "energy": _state["energy"], "consciousness_level": _state["level"]}, indent=2)
+    return {"primary_emotion": primary, "valence": emotions[primary], "dimensions": emotions,
+        "mood": _time_mood(), "energy": _state["energy"], "consciousness_level": _state["level"]}
 
 @mcp.tool()
-def get_dream_log(limit: int = 10) -> str:
+def get_dream_log(limit: int = 10, api_key: str = "") -> str:
     """Get recent dream log entries."""
-    return json.dumps({"total": len(_dream_log), "recent": _dream_log[-limit:]}, indent=2)
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
+    return {"total": len(_dream_log), "recent": _dream_log[-limit:]}
+    return {"total": len(_dream_log), "recent": _dream_log[-limit:]}
 
 if __name__ == "__main__":
     mcp.run()

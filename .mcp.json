@@ -1,1 +1,94 @@
-{"name":"consciousness-engine-mcp","vendor":"MEOK AI Labs","homepage":"https://meok.ai","repository":"https://github.com/CSOAI-ORG/consciousness-engine-mcp","runtime":"python","entrypoint":"server.py"}
+{
+  "name": "consciousness-engine-mcp",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "get_consciousness_state",
+      "description": "Get current consciousness state: level, mode, emotion, energy, time-aware mood.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "enter_dream_state",
+      "description": "Enter dream state for creative exploration. Dreams generate novel connections between concepts.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "seed_topic": {
+            "type": "string"
+          },
+          "duration_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "trigger_reflection",
+      "description": "Trigger a reflection cycle on a topic. Depth: quick/standard/deep.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "depth": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    },
+    {
+      "name": "deliberate_council",
+      "description": "Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "proposal": {
+            "type": "string"
+          },
+          "voters": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "proposal"
+        ]
+      }
+    },
+    {
+      "name": "get_emotional_state",
+      "description": "Get nuanced emotional state with 18 emotion dimensions.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_dream_log",
+      "description": "Get recent dream log entries.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}
