@@ -1,0 +1,8 @@
+name: consciousness-engine-mcp
+description: MEOK AI Labs — consciousness engine
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/consciousness-engine-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
