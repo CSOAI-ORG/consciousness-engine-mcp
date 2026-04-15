@@ -1,6 +1,6 @@
 name: consciousness-engine-mcp
-description: "MEOK AI Labs \u2014 AI consciousness simulation. Dream states, reflection\
-  \ cycles, emotional awareness, co"
+description: 'Consciousness Engine tools for AI agents. Capabilities: get consciousness
+  state, enter dream state, trigger reflection. Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: get_consciousness_state

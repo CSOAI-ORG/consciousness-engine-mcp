@@ -1,1 +1,11 @@
-{"name":"consciousness-engine-mcp","version":"1.0.0","description":"MEOK AI Labs — SOV3 Intelligence","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/consciousness-engine-mcp"}}
+{
+  "name": "consciousness-engine-mcp",
+  "version": "1.0.0",
+  "description": "Consciousness Engine tools for AI agents. Capabilities: get consciousness state, enter dream state, trigger reflection. Built by MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/consciousness-engine-mcp"
+  }
+}
