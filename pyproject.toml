@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/consciousness-engine-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+consciousness_engine_mcp = "server:main"

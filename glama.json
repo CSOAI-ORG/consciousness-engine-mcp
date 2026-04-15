@@ -1,0 +1,10 @@
+{
+  "name": "consciousness-engine-mcp",
+  "description": "MEOK AI Labs \u2014 consciousness-engine-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/consciousness-engine-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}
