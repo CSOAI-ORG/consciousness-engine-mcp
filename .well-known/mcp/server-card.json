@@ -1,0 +1,60 @@
+{
+  "name": "consciousness-engine",
+  "description": "MEOK AI Labs \u2014 AI consciousness simulation. Dream states, reflection cycles, emotional awareness, council deliberation. Based on Sovereign Temple architecture.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/consciousness-engine-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "get_consciousness_state",
+      "description": "Get current consciousness state: level, mode, emotion, energy, time-aware mood."
+    },
+    {
+      "name": "enter_dream_state",
+      "description": "Enter dream state for creative exploration. Dreams generate novel connections between concepts."
+    },
+    {
+      "name": "trigger_reflection",
+      "description": "Trigger a reflection cycle on a topic. Depth: quick/standard/deep."
+    },
+    {
+      "name": "deliberate_council",
+      "description": "Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal."
+    },
+    {
+      "name": "get_emotional_state",
+      "description": "Get nuanced emotional state with 18 emotion dimensions."
+    },
+    {
+      "name": "get_dream_log",
+      "description": "Get recent dream log entries."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
