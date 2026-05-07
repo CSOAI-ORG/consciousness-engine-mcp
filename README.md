@@ -36,3 +36,4 @@ See the project repository for full documentation and examples.
 ## License
 
 MIT © [CSOAI](https://csoai.org)
+<!-- mcp-name: io.github.CSOAI-ORG/consciousness-engine-mcp -->
