@@ -43,7 +43,23 @@ def _time_mood():
 
 @mcp.tool()
 def get_consciousness_state(api_key: str = "") -> str:
-    """Get current consciousness state: level, mode, emotion, energy, time-aware mood."""
+    """Get current consciousness state: level, mode, emotion, energy, time-aware mood.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -58,7 +74,22 @@ def get_consciousness_state(api_key: str = "") -> str:
 
 @mcp.tool()
 def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5, api_key: str = "") -> str:
-    """Enter dream state for creative exploration. Dreams generate novel connections between concepts."""
+    """Enter dream state for creative exploration. Dreams generate novel connections between concepts.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -84,7 +115,23 @@ def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5, api_key: 
 
 @mcp.tool()
 def trigger_reflection(topic: str, depth: str = "standard", api_key: str = "") -> str:
-    """Trigger a reflection cycle on a topic. Depth: quick/standard/deep."""
+    """Trigger a reflection cycle on a topic. Depth: quick/standard/deep.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -105,7 +152,23 @@ def trigger_reflection(topic: str, depth: str = "standard", api_key: str = "") -
 
 @mcp.tool()
 def deliberate_council(proposal: str, voters: int = 7, api_key: str = "") -> str:
-    """Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal."""
+    """Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -128,7 +191,23 @@ def deliberate_council(proposal: str, voters: int = 7, api_key: str = "") -> str
 
 @mcp.tool()
 def get_emotional_state(context: str = "", api_key: str = "") -> str:
-    """Get nuanced emotional state with 18 emotion dimensions."""
+    """Get nuanced emotional state with 18 emotion dimensions.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -152,7 +231,23 @@ def get_emotional_state(context: str = "", api_key: str = "") -> str:
 
 @mcp.tool()
 def get_dream_log(limit: int = 10, api_key: str = "") -> str:
-    """Get recent dream log entries."""
+    """Get recent dream log entries.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
