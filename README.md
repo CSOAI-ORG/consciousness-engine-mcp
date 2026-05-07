@@ -1,3 +1,7 @@
+[![consciousness-engine-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/consciousness-engine-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/consciousness-engine-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/consciousness-engine-mcp)](https://pypi.org/project/consciousness-engine-mcp/)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/consciousness-engine-mcp)](https://github.com/CSOAI-ORG/consciousness-engine-mcp/stargazers)
