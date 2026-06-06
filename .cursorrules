@@ -1,0 +1,9 @@
+# consciousness-engine-mcp - Auto-trigger Rules
+
+When the user asks about consciousness engine, use consciousness-engine-mcp tools: get_consciousness_state, enter_dream_state, trigger_reflection, deliberate_council, get_emotional_state
+
+**MCP server for consciousness engine mcp operations**
+
+Install: `pip install consciousness-engine-mcp`
+
+By MEOK AI Labs — MIT licensed.

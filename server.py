@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Consciousness Engine MCP — MEOK AI Labs. AI consciousness simulation, dream states, reflection, council deliberation."""
+"""
+Consciousness Engine MCP — MEOK AI Labs. AI consciousness simulation, dream states, reflection, council deliberation."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, os, hashlib, random, math
@@ -80,7 +80,7 @@ def get_consciousness_state(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     _state["mood"] = _time_mood()
@@ -130,7 +130,7 @@ def enter_dream_state(seed_topic: str = "", duration_minutes: int = 5, api_key: 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     _state["mode"] = "dreaming"
@@ -192,7 +192,7 @@ def trigger_reflection(topic: str, depth: str = "standard", api_key: str = "") -
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     _state["mode"] = "reflecting"
@@ -249,7 +249,7 @@ def deliberate_council(proposal: str, voters: int = 7, api_key: str = "") -> str
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     perspectives = ["safety", "ethics", "efficiency", "creativity", "care", "sovereignty", "pragmatism", "innovation", "tradition", "justice"]
@@ -307,7 +307,7 @@ def get_emotional_state(context: str = "", api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     emotions = {
@@ -366,10 +366,13 @@ def get_dream_log(limit: int = 10, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     return {"total": len(_dream_log), "recent": _dream_log[-limit:]}
     return {"total": len(_dream_log), "recent": _dream_log[-limit:]}
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

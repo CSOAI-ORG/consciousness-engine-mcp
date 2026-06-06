@@ -1,0 +1,31 @@
+{
+  "name": "consciousness-engine-mcp",
+  "title": "Consciousness Engine Mcp",
+  "description": "Consciousness Engine tools for AI agents. Capabilities: get consciousness state, enter dream state, trigger reflection. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "get_consciousness_state"
+    },
+    {
+      "name": "enter_dream_state"
+    },
+    {
+      "name": "trigger_reflection"
+    },
+    {
+      "name": "deliberate_council"
+    },
+    {
+      "name": "get_emotional_state"
+    },
+    {
+      "name": "get_dream_log"
+    }
+  ]
+}

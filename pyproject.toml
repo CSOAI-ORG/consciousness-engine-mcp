@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "consciousness-engine-mcp"
-version = "1.0.5"
+version = "1.0.6"
 readme = "README.md"
 description = "Consciousness Engine tools for AI agents. Capabilities: get consciousness state, enter dream state, trigger reflection. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/consciousness-engine-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 consciousness_engine_mcp = "server:main"
