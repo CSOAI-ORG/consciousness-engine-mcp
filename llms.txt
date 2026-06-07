@@ -1,0 +1,33 @@
+# Consciousness Engine MCP
+
+> MEOK AI Labs — AI consciousness simulation
+
+`consciousness-engine-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install consciousness-engine-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx consciousness-engine-mcp
+```
+
+## Tools
+
+- `get_consciousness_state` — Get current consciousness state: level, mode, emotion, energy, time-aware mood.
+- `enter_dream_state` — Enter dream state for creative exploration. Dreams generate novel connections between concepts.
+- `trigger_reflection` — Trigger a reflection cycle on a topic. Depth: quick/standard/deep.
+- `deliberate_council` — Byzantine fault-tolerant council deliberation. Multiple AI perspectives vote on a proposal.
+- `get_emotional_state` — Get nuanced emotional state with 18 emotion dimensions.
+- `get_dream_log` — Get recent dream log entries.
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/consciousness-engine-mcp
+- PyPI: https://pypi.org/project/consciousness-engine-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
