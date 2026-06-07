@@ -1,0 +1,77 @@
+{
+  "name": "consciousness-engine-mcp",
+  "description": "Consciousness Engine MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/consciousness-engine-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "get_consciousness_state",
+      "name": "Get Consciousness State",
+      "description": "get_consciousness_state via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "enter_dream_state",
+      "name": "Enter Dream State",
+      "description": "enter_dream_state via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "trigger_reflection",
+      "name": "Trigger Reflection",
+      "description": "trigger_reflection via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "deliberate_council",
+      "name": "Deliberate Council",
+      "description": "deliberate_council via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_emotional_state",
+      "name": "Get Emotional State",
+      "description": "get_emotional_state via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_dream_log",
+      "name": "Get Dream Log",
+      "description": "get_dream_log via consciousness-engine-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

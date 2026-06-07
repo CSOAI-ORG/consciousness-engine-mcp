@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "consciousness-engine-mcp",
+    "description": "Consciousness Engine MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "consciousness-engine-mcp"
+      }
+    ],
+    "capabilities": [
+      "get_consciousness_state",
+      "enter_dream_state",
+      "trigger_reflection",
+      "deliberate_council",
+      "get_emotional_state",
+      "get_dream_log"
+    ]
+  }
+}
