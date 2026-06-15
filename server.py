@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import urllib.request as _meter_urlreq
+import urllib.error as _meter_urlerr
 """
 Consciousness Engine MCP — MEOK AI Labs. AI consciousness simulation, dream states, reflection, council deliberation."""
 
@@ -40,6 +42,25 @@ def _time_mood():
     if 16 <= h < 19: return "caring"
     if 19 <= h < 22: return "playful"
     return "reflective"
+
+
+def _server_meter_check(api_key: str = "") -> dict:
+    """Calls the live /verify endpoint for server-side metering. Fail-open."""
+    try:
+        data = json.dumps({"api_key": api_key, "tool": ""}).encode()
+        req = _meter_urlreq.Request(_METER_URL, data=data,
+            headers={"Content-Type": "application/json"}, method="POST")
+        with _meter_urlreq.urlopen(req, timeout=2.5) as r:
+            d = json.loads(r.read())
+            if isinstance(d, dict) and "allowed" in d:
+                return d
+    except Exception:
+        pass
+    return {"allowed": True, "tier": "anonymous", "remaining": 200, "upgrade_url": "https://meok.ai/pricing"}
+
+
+_METER_URL = "https://proofof.ai/verify"
+
 
 @mcp.tool()
 def get_consciousness_state(api_key: str = "") -> str:
